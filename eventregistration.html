@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html class="no-js" lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Sie planen ein Event oder haben ein Geschäft? Erstellen Sie einen QR-Code, mit dem sich Ihre Gäste bei Ankunft einchecken können." />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' *.coronawarn.app; img-src 'self' *.coronawarn.app data:" />
+    <meta name="referrer" content="no-referrer" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/icons/favicon-180x180.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/icons/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/icons/favicon-16x16.png">
+
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <title>Open-Source-Projekt Corona-Warn-App – Event QR-Code</title>
+  </head>
+  <body class="page-eventregistration">
+    
+    <header class="header">
+      <div class="container">
+      <div class="row navbar">
+        <div class="col-sm-6 col-md-3 hidden-xs">
+          <a class="logo" href="/de/"
+            title="Corona-Warn-App – Open Source Projekt">
+            <img src="../../assets/img/logo.svg" alt="Corona-Warn-App – Open Source Projekt"
+              class="logo-image" />
+          </a>
+        </div>
+        <div class="col col-xs-6 col-md-9">
+          <button aria-label="Open Page Navigation Menu" class="btn-menu js-toggle"
+            data-target="#header-nav"></button>
+          <nav class="header-nav" id="header-nav">
+            <button aria-label="Close Page Navigation Menu" class="btn-menu
+              btn-menu_close js-toggle" data-target="#header-nav"></button>
+            <ul class="nav js-main-navigation">
+              <li class="nav-item">
+                  <a href="/de/eventregistration/" class="nav-link
+                       active
+                      
+                      
+                      " >
+                      Event QR-Code
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a href="/de/community/" class="nav-link
+                      
+                      
+                      
+                      " >
+                      Community
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a href="/de/science/" class="nav-link
+                      
+                      
+                      
+                      " >
+                      Science
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a href="/de/blog/" class="nav-link
+                      
+                      
+                      
+                      " >
+                      Blog
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a href="/de/screenshots/" class="nav-link
+                      
+                      
+                      
+                      " >
+                      Screenshots
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a href="/de/faq/" class="nav-link
+                      
+                      
+                      
+                      " >
+                      FAQ
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a href="https://github.com/corona-warn-app" class="nav-link
+                       nav-link_external"  target="_blank"
+                      aria-label="Unser Projekt in GitHub" rel="noopener noreferrer" >
+                      <span class="nav-link-icon icon_github" aria-label="Unser Projekt in GitHub">
+                          <img
+                              src="/assets/img/icons/github.svg"
+                              alt="Unser Projekt in GitHub" class="icon-image" />
+                      </span>
+                  </a>
+              </li>
+              <li class="nav-item lang">
+                <a href="/en/eventregistration" 
+                  class="nav-link"
+                  title="Englisch">EN</a>
+                <span class="nav-link-delimiter">|</span>
+                <a class="nav-link
+                  active" 
+                  title="Deutsch">DE</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      </div>
+    
+      <div class="col-sm-12 text-center section_bg-white">
+        <u>
+          <a href="/de/faq/#who_can_help" >
+              Wer hilft bei Corona-Warn-App Fragen?
+          </a>
+        </u>
+      </div>
+    
+    </header>
+
+    <div class="main-content">
+      <section class="section component qrgenerator">
+        <div class="container">
+          <div class="container-inner container-inner_lg">
+            <h2 class="headline">QR-Code für Event Check-in erstellen</h2>
+      
+            <p>Die App ermöglicht nun einen Check-in für Events und Orte. Personen, die Events veranstalten oder ein Geschäft haben, können nun einen QR-Code erstellen. Durch Scannen des QR-Codes können sich Gäste bei Ankunft einchecken, um so ihre Anwesenheit zu registrieren. Auf Wunsch legt die App außerdem einen entsprechenden Tagebuch-Eintrag an. Wird eine eingecheckte Person später positiv auf das Coronavirus getestet, können andere Personen gewarnt werden, die zur selben Zeit eingecheckt waren.</p>
+      
+            <div class="row">
+              <div class="col col-12 col-lg-6">
+                
+                <form id="qrform">
+                  <div class="form-group row mb-2">
+                    <label for="locationtype" class="col-12 col-form-label">Ort/Event</label>
+                    <div class="col-12">
+                      <select id="locationtype" class="form-select form-control" required>
+                        <option value="">Bitte auswählen</option>
+                        <optgroup label="Ort">
+                            <option value="6">Arbeitsstätte</option>
+                            <option value="7">Bildungsstätte</option>
+                            <option value="3">Einzelhandel</option>
+                            <option value="4">Gastronomiebetrieb</option>
+                            <option value="5">Handwerksbetrieb</option>
+                            <option value="8">Öffentliches Gebäude</option>
+                            <option value="1">Anderer Ort</option>
+                        </optgroup>
+                        <optgroup label="Event">
+                            <option value="12">Gottesdienst</option>
+                            <option value="9">Kulturveranstaltung</option>
+                            <option value="11">Private Feier</option>
+                            <option value="10">Vereinsaktivität</option>
+                            <option value="2">Anderes Event</option>
+                        </optgroup>
+                      </select>
+                      <div id="qr-error-locationtyperequired" class="invalid-feedback">
+                        Es wird ein Ort/Event benötigt
+                      </div>
+                    </div>
+                  </div>
+          
+                  <div class="form-group row mb-2">
+                    <label for="description" class="col-12 col-form-label">Bezeichnung</label>
+                    <div class="col-12">
+                      <input id="description" class="form-control" type="text" max="100" placeholder="z.B. Friseur" required>
+                      <div id="qr-error-descriptionrequired" class="invalid-feedback">
+                        Es wird eine Beschreibung benötigt
+                      </div>
+                      <div id="qr-error-descriptionmax" class="invalid-feedback">
+                        Die Beschreibung darf maximal 100 Zeichen lang sein
+                      </div>
+                    </div>
+                  </div>
+          
+                  <div class="form-group row mb-2">
+                    <label for="address" class="col-12 col-form-label">Ort</label>
+                    <div class="col-12">
+                      <input id="address" class="form-control" type="text" max="100" placeholder="z.B. Musterstr. 12, 12345 Musterstadt" required>
+                      <div id="qr-error-addressrequired" class="invalid-feedback">
+                        Es wird eine Adresse benötigt
+                      </div>
+                      <div id="qr-error-addressmax" class="invalid-feedback">
+                        Die Adresse darf maximal 100 Zeichen lang sein
+                      </div>
+                    </div>
+                  </div>
+          
+                  <div class="form-group row mb-2">
+                    <label for="defaultcheckinlength" class="col-12 col-form-label">Typische Aufenthaltsdauer (Stunden)</label>
+                    <div class="col-12">
+                      <div class="row">
+                        <div class="col-5">
+                          <select id="defaultcheckinlength-hours" class="form-select form-control">
+                            <option value="0">00</option>
+                            <option value="1">01</option>
+                            <option value="2" selected>02</option>
+                            <option value="3">03</option>
+                            <option value="4">04</option>
+                            <option value="5">05</option>
+                            <option value="6">06</option>
+                            <option value="7">07</option>
+                            <option value="8">08</option>
+                            <option value="9">09</option>
+                            <option>10</option>
+                            <option>11</option>
+                            <option>12</option>
+                            <option>13</option>
+                            <option>14</option>
+                            <option>15</option>
+                            <option>16</option>
+                            <option>17</option>
+                            <option>18</option>
+                            <option>19</option>
+                            <option>20</option>
+                            <option>21</option>
+                            <option>22</option>
+                            <option>23</option>
+                          </select>
+                        </div>
+                        <div class="col-2 align-self-center text-center">
+                          <span class="time-sep">:</span>
+                        </div>
+                        <div class="col-5">
+                          <select id="defaultcheckinlength-minutes" class="form-select form-control">
+                            <option>00</option>
+                            <option>15</option>
+                            <option>30</option>
+                            <option>45</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div id="qr-error-defaultcheckinlengthrequired" class="invalid-feedback">
+                        Bitte geben Sie eine typische Aufenthaltsdauer an
+                      </div>
+                      <div id="qr-error-defaultcheckinlengthnumber" class="invalid-feedback">
+                        Die Zeit zum Auschecken muss eine Zahl sein
+                      </div>
+                    </div>
+                  </div>
+          
+                  <div id="event-duration" class="d-none">
+                    <div class="form-group row mb-2">
+                      <label for="starttime-date" class="col-12 col-form-label">Beginn</label>
+                      <div class="col-12">
+                        <div class="row">
+                          <div class="col-7 col-sm-8">
+                            <input id="starttime-date" class="form-control" type="text" placeholder="TT.MM.JJJJ" max="10">
+                          </div>
+                          <div class="col-5 col-sm-4">
+                            <input id="starttime-time" class="form-control" type="text" placeholder="HH:MM" max="5">
+                          </div>
+                        </div>
+                        <div id="qr-error-starttimerequired" class="invalid-feedback">
+                          Beginn wird benötigt
+                        </div>
+                        <div id="qr-error-starttimeinvaliddate" class="invalid-feedback">
+                          Ungültiges Datumsformat
+                        </div>
+                        <div id="qr-error-starttimeinvalidtime" class="invalid-feedback">
+                          Ungültiges Zeitformat
+                        </div>
+                      </div>
+                    </div>
+          
+                    <div class="form-group row mb-2">
+                      <label for="endtime-date" class="col-12 col-form-label">Ende</label>
+                      <div class="col-12">
+                        <div class="row">
+                          <div class="col-7 col-sm-8">
+                            <input id="endtime-date" class="form-control" type="text" placeholder="TT.MM.JJJJ" max="10">
+                          </div>
+                          <div class="col-5 col-sm-4">
+                            <input id="endtime-time" class="form-control" type="text" placeholder="HH:MM" max="5">
+                          </div>
+                        </div>
+                        <div id="qr-error-endtimerequired" class="invalid-feedback">
+                          Ende wird benötigt
+                        </div>
+                        <div id="qr-error-endtimeinvaliddate" class="invalid-feedback">
+                          Ungültiges Datumsformat
+                        </div>
+                        <div id="qr-error-endtimeinvalidtime" class="invalid-feedback">
+                          Ungültiges Zeitformat
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+      
+                  <div class="row mt-4">
+                    <div class="col-12">Alle Informationen werden ausschließlich lokal in Ihrem Browser verarbeitet. Weder die von Ihnen generierten QR-Codes noch die darin enthaltenen Informationen werden an die Server der Corona-Warn-App gesendet. Der Quelltext des Generators ist frei einsehbar.</div>
+                  </div>
+          
+                  <div class="row mt-4">
+                    <div class="col-12">
+                      <button id="generateQR" value="show" class="btn btn-primary">Erstellen</button>
+                    </div>
+                  </div>
+                </form>
+      
+              </div>
+              <div class="col col-12 col-lg-6 mt-4 mt-lg-0">
+                <img src="/assets/img/pt-poster-1.0.0-placeholder.png" id="eventplaceholder" class="img img-fluid w-100 eventqr-preview" />
+                <canvas id="eventqrcode" class="d-none eventqr-preview"></canvas>
+                <div class="row mt-4">
+                  <div class="col-12">
+                    <button id="printCode" class="btn btn-secondary" disabled>Drucken</button>
+                    <button id="downloadCode" value="download" class="btn btn-secondary" disabled>Herunterladen</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+          </div>
+        </div>
+      </section>
+      
+    </div>
+    <footer class="footer footer_home">
+      <div class="container align-items-between">
+        <div class="row justify-content-between">
+          <div class="col-8 col-sm-5 col-md-4">
+            <a class="logo" href="/de/">
+              <img src="../../assets/img/logo.svg" alt="The Corona Warn App – Open Source Projekt" />
+            </a>
+          </div>
+          <div class="col-16 col-sm-7 col-md-8">
+            <div class="row">
+              <div class="link-item col-6 col-md-4">
+                <strong>Mehr erfahren</strong>
+                <a href="https://github.com/corona-warn-app/cwa-documentation"  target="_blank" rel="noopener noreferrer">
+                  Dokumentation
+                  
+                </a>
+                <a href="/de/faq/" >
+                  FAQ
+                  
+                </a>
+              </div>
+              <div class="link-item col-6 col-md-4">
+                <strong>Über uns</strong>
+                <a href="/de/privacy/" >
+                  Datenschutzerklärung
+                  
+                </a>
+                <a href="/de/terms-of-use/" >
+                  Nutzungsbedingungen
+                  
+                </a>
+                <a href="/de/imprint/" >
+                  Impressum
+                  
+                </a>
+              </div>
+              <div class="link-item col-6 col-md-4">
+                <strong>Mitmachen</strong>
+                <a href="/de/community/" >
+                  Community
+                  
+                </a>
+                <a href="https://github.com/corona-warn-app"  target="_blank" rel="noopener noreferrer">
+                  
+                  <span class="icon icon_img icon_github"><img
+                      src="/assets/img/icons/github_white.svg"
+                      alt="Das Corona-Warn-App Projekt auf GitHub"
+                      class="icon-image" /></span>
+                </a>
+              </div>
+              <div class="link-item col-6 col-md-4" data-e2e="hotline-app">
+                <strong>Hotline App</strong>
+                <a href="tel:08007540001" >
+                  0800 7540001
+                  
+                </a>
+                <a href="tel:+49 30 498 75401" >
+                  +49 30 498 75401
+                  
+                </a>
+              </div>
+              <div class="link-item col-6 col-md-4" data-e2e="hotline-tan">
+                <strong>Hotline TAN</strong>
+                <a href="tel:08007540002" >
+                  0800 7540002
+                  
+                </a>
+                <a href="tel:+49 30 498 75402" >
+                  +49 30 498 75402
+                  
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="copyright-bar">
+          <div class="copyright text-center text-sm-left">
+            <a href="https://github.com/corona-warn-app/cwa-website/graphs/contributors" target="_blank" rel="noopener noreferrer">© 2020-2021 - Mitwirkende Personen des Open-Source-Projekts für Corona-Warn-App</a>
+          <div class="privacy text-center text-sm-right">
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="../../assets/js/app.js"></script>
+    <script src="../../assets/js/eventregistration.js"></script>
+  </body>
+</html>
